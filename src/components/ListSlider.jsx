@@ -23,7 +23,7 @@ const ListSlider = (props) => {
                         slidesPerView : 3
                     },
                     768 : {
-                        slidesPerView : 6,
+                        slidesPerView : 7,
                         
                     }
                 }}

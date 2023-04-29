@@ -9,7 +9,7 @@ const ListHoverCard = (props) => {
     return (
         
         <div className="absolute w-full h-full justify-center items-start flex flex-col gap-2 px-2 md:gap-5 md:px-5 hover:backdrop-brightness-[0.25] z-30 duration-200">
-            <div className="text-hover-card md:text-base text-white font-medium text-left">{props.anime.title.english}</div>
+            <div className="text-hover-card md:text-sm text-white font-medium text-left">{props.anime.title.english}</div>
             <div className="text-hover-card md:text-sm text-white font-medium flex flex-wrap">
                 <p>Genres: </p> 
                 {props.anime.genres.map((genre, key) => {
