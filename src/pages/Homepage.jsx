@@ -67,13 +67,12 @@ export default function Homepage() {
     useEffect(() => {
         if (mobileNav.current) setHeight(mobileNav.current.offsetHeight)
         if (searchBar.current) setSearchHeight(searchBar.current.offsetHeight)
-    }, [])
+    }, [searchActive])
 
 
     return (
     
     <div className="overflow-x-hidden">
-        {console.log(searchQuery)}
         <Navbar ref={desktopNav} changeBg={navChange} searchChange={handleActive}/>
         <Searchbar show={searchActive} searchChange={handleActive} typeSearch={handleSearch} searchWord={searchQuery} ref={searchBar} barHeight={searchBarHeight}/>
         <MobileNavbar ref={mobileNav} searchChange={handleActive} searchStatus={navChange}/>
