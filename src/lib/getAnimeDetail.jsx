@@ -19,7 +19,7 @@ query getAnimeSlide($id:Int) {
       description
       averageScore
       format
-      characters(sort:ROLE) {
+      characters(sort:FAVOURITES_DESC) {
         nodes {
           id
           name {
