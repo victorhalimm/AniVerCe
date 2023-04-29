@@ -1,6 +1,7 @@
 import { useQuery } from "@apollo/client";
 import { GET_ANIME_SEARCH } from "../lib/getAnimeSearch";
 import AnimeGrid from "./AnimeGrid";
+import LoadingPage from "../pages/LoadingPage";
 
 const ResultSection = (props) => {
     const {loading, error, data} = useQuery(GET_ANIME_SEARCH, {
@@ -9,8 +10,8 @@ const ResultSection = (props) => {
         }
     })
 
-    if (loading) return <div className="w-screen h-screen bg-black"></div>
-    if (error) return <div className="w-screen h-screen bg-black"></div>
+    if (loading) return <LoadingPage />
+    if (error) return <LoadingPage />
     return (
         
         <div className="w-screen py-10 bg-black min-h-screen">

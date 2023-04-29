@@ -8,6 +8,7 @@ import CharacterSlider from "../components/CharacterSlider";
 import MobileNavbar from "../components/MobileNavbar";
 import { useEffect, useRef, useState } from "react";
 import SuggestionSlider from "../components/SuggestionSlider";
+import LoadingPage from "./LoadingPage";
 
 const AnimeDetails = () => {
     const param = useParams()
@@ -23,8 +24,9 @@ const AnimeDetails = () => {
     useEffect(() => {
         if (mobileNav.current) setHeight(mobileNav.current.offsetHeight)
     }, [])
-    if (error) return <div></div>
-    if (loading) return <div></div>
+    
+    if (error) return <LoadingPage />
+    if (loading) return <LoadingPage />
     return (
         <div className="bg-black">
             {console.log(mobileNavHeight)}

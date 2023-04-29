@@ -5,14 +5,16 @@ import ListSlider from "./ListSlider";
 import { GET_ANIME_TREND } from "../lib/getAnimeTrending";
 import { GET_ANIME_FAVORITE } from "../lib/getAnimeFavorite";
 import { GET_ANIME_AIRING } from "../lib/getAnimeAiring";
+import LoadingPage from "../pages/LoadingPage";
 
 const HomeList = (props) => {
+    
     const {loading: popularLoading, error: popularError, data: popularData} = useQuery(GET_ANIME_POPULAR)
     const {loading: trendingLoading, error: trendingError, data: trendingData} = useQuery(GET_ANIME_TREND)
     const {loading: fanFavoriteLoading, error: fanFavoriteError, data: fanFavoriteData} = useQuery(GET_ANIME_FAVORITE)
     const {loading: airingLoading, error: airingError, data: airingData} = useQuery(GET_ANIME_AIRING)
-    if (popularLoading || trendingLoading || fanFavoriteLoading ||airingLoading) return <div></div>
-    if (popularError || trendingError || fanFavoriteError || airingError) return <div></div>  
+    if (popularLoading || trendingLoading || fanFavoriteLoading ||airingLoading) return <LoadingPage />
+    if (popularError || trendingError || fanFavoriteError || airingError) return <LoadingPage /> 
     return (
 
         
