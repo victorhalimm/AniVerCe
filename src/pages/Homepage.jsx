@@ -60,6 +60,7 @@ export default function Homepage() {
     useEffect(() => {
         if (searchQuery.length > 0) {
             setOnSearch(true)
+            goToTop()
         }
         else setOnSearch(false)
     }, [searchQuery])
@@ -69,12 +70,18 @@ export default function Homepage() {
         if (searchBar.current) setSearchHeight(searchBar.current.offsetHeight)
     }, [searchActive])
 
+    function goToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
 
     return (
     
     <div className="overflow-x-hidden">
         <Navbar ref={desktopNav} changeBg={navChange} searchChange={handleActive} hide={searchActive}/>
-        <Searchbar show={searchActive} searchChange={handleActive} typeSearch={handleSearch} searchWord={searchQuery} ref={searchBar} barHeight={searchBarHeight}/>
+        <Searchbar show={searchActive} onSearchStatus={onSearch} searchChange={handleActive} typeSearch={handleSearch} searchWord={searchQuery} ref={searchBar} barHeight={searchBarHeight}/>
         <MobileNavbar ref={mobileNav} searchChange={handleActive} searchStatus={navChange}/>
         <AnimeSlider ref={animeSlide} onSearchStatus={onSearch}/>
         <HomeList mobileHeight={mobileNavHeight} onSearchStatus={onSearch}/>

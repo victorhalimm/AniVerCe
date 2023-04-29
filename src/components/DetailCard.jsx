@@ -15,9 +15,16 @@ const DetailCard = (props) => {
     }, )
     
     return (
-        <div className="bg-black w-full z-20 px-10 md:px-20 flex md:gap-16 py-5">
-            <div className="hidden md:block w-64 h-96 bg-white">
-                <img src={props.poster} alt="" className="w-full h-full object-cover" />
+        <div className="bg-black w-full -mt-1 z-20 px-10 md:px-20 flex md:gap-16 py-5">
+            <div className="flex flex-col gap-5">
+                <div className="hidden md:block w-64 h-96 bg-white">
+                    <img src={props.poster} alt="" className="w-full h-full object-cover" />
+                </div>
+                <Link>
+                    <button className="hidden md:block bg-white w-full py-2 rounded-2xl text-xl text-black font-bold hover:bg-pink-600 hover:text-white duration-100">
+                        ADD FAVORITE
+                    </button>
+                </Link>
             </div>
             <div className="flex flex-col gap-3 text-white w-full md:w-7/12">
                 <div className="text-2xl md:text-3xl font-bold">
@@ -38,9 +45,9 @@ const DetailCard = (props) => {
                 </div>
                 <div className="text-md font-normal" dangerouslySetInnerHTML={{__html: props.desc}}></div>
                 <Link>
-                <button className="bg-white px-3 py-1 rounded-xl text-md text-black font-bold hover:bg-pink-600 hover:text-white duration-100">
-                    ADD FAVORITE
-                </button>
+                    <button className="md:hidden bg-white px-3 py-1 rounded-xl text-md text-black font-bold hover:bg-pink-600 hover:text-white duration-100">
+                        ADD FAVORITE
+                    </button>
                 </Link>
             </div>
         </div>
