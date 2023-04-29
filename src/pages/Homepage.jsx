@@ -73,7 +73,7 @@ export default function Homepage() {
     return (
     
     <div className="overflow-x-hidden">
-        <Navbar ref={desktopNav} changeBg={navChange} searchChange={handleActive}/>
+        <Navbar ref={desktopNav} changeBg={navChange} searchChange={handleActive} hide={searchActive}/>
         <Searchbar show={searchActive} searchChange={handleActive} typeSearch={handleSearch} searchWord={searchQuery} ref={searchBar} barHeight={searchBarHeight}/>
         <MobileNavbar ref={mobileNav} searchChange={handleActive} searchStatus={navChange}/>
         <AnimeSlider ref={animeSlide} onSearchStatus={onSearch}/>
