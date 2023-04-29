@@ -36,9 +36,6 @@ const Navbar = React.forwardRef((props, ref) => {
                     <div className={selected === 'Home' ? " bg-slate-50 text-slate-950 px-3 py-1 ease-in duration-100 rounded-lg" : "px-3 py-1 ease-out rounded-lg"}>
                         <Link to='/' onClick={() => handleSelect('Home')}>Home</Link>
                     </div>
-                    <div className={selected === 'List' ? " bg-slate-50 text-slate-950 px-3 py-1 ease-in duration-100 rounded-lg" : "px-3 py-1 ease-out rounded-lg"}>
-                        <Link to='/' onClick={() => handleSelect('List')}>List</Link>
-                    </div>
                     <div className={selected === 'Favorite' ? " bg-slate-50 text-slate-950 px-3 py-1 ease-in duration-100 rounded-lg" : "px-3 py-1 ease-out rounded-lg"}>
                         <Link to='/' onClick={() => handleSelect('Favorite')}>Favorite</Link>
                     </div>

@@ -23,3 +23,8 @@
     border-radius: 10px;
     border: 3px solid #0f1ccc;
   }
+
+  .text-hover-card {
+    font-size: 0.6rem;
+    line-height: 1rem;
+  }

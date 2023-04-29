@@ -5,7 +5,7 @@ import CharacterCard from './CharacterCard';
 
 const CharacterSlider = (props) => {
     return (
-        <div className='px-10 md:px-20 py-10'>
+        <div className='px-10 md:px-20 pt-10 pb-20'>
 
             <Swiper
             // install Swiper modules
