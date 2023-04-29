@@ -16,15 +16,15 @@ const HomeList = (props) => {
         
         <div className={props.onSearchStatus ? "hidden" : 'bg-black w-full -mt-1 relative z-40'}>
             <div className="mx-10 md:mx-16 flex flex-col gap-5">
-            <div className="w-full text-white font-semibold text-2xl py-5">Trending Now</div>
+            <div className="w-full text-white font-semibold text-2xl py-2 md:py-5">Trending Now</div>
                 <div className="justify-center flex flex-wrap gap-10 md:justify-normal pb-10">
                     <ListSlider animes={trendingData.Page.media}/>
                 </div>
-                <div className="w-full text-white font-semibold text-2xl py-5">Discover Popular Anime</div>
+                <div className="w-full text-white font-semibold text-2xl py-2 md:py-5">Discover Popular Anime</div>
                 <div className="justify-center flex flex-wrap gap-10 md:justify-normal pb-10">
                     <ListSlider animes={popularData.Page.media}/>
                 </div>
-                <div className="w-full text-white font-semibold text-2xl py-5">Fan Favorites</div>
+                <div className="w-full text-white font-semibold text-2xl py-2 md:py-5">Fan Favorites</div>
                 <div className="justify-center flex flex-wrap gap-10 md:justify-normal pb-10">
                     <ListSlider animes={fanFavoriteData.Page.media}/>
                 </div>

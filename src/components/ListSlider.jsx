@@ -32,7 +32,7 @@ const ListSlider = (props) => {
                         return (
                         <SwiperSlide key={key}>
                             <button onMouseEnter={() => handleMouseEnter(key)} onMouseLeave={() => handleMouseLeave()} onTouchStart={() => handleMouseEnter(key)}>
-                                <div className="w-[6.5rem] h-40 md:w-44 md:h-60 relative">
+                                <div className="w-[6.5rem] h-44 md:w-44 md:h-60 relative">
                                     {(active === key) ? <ListHoverCard anime={anime}/> : ""}
                                     <img src={anime.coverImage.large} alt="" srcset="" className="rounded-sm object-cover w-full h-full -z-10"/>
                                 </div>
