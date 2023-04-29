@@ -13,7 +13,7 @@ const SuggestionSlider = (props) => {
     if (loading) return <div></div>
     if (error) return <div></div>
     return (
-        <div className="px-10 md:px-20 md:pt-10 pb-20 bg-black">
+        <div className="px-10 md:px-20 pb-20 bg-black">
             <div className="text-white text-2xl font-semibold pb-10">More Anime Like This</div>
             <ListSlider animes={data.Page.media}/>
         </div>
