@@ -1,5 +1,4 @@
 import { useState } from "react";
-import ListHoverCard from "./ListHoverCard";
 import AnimeGrid from "./AnimeGrid";
 
 const FavoriteList = (props) => {

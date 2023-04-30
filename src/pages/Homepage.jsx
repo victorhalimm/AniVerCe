@@ -2,7 +2,7 @@ import AnimeSlider from "../components/AnimeSlider";
 import Navbar from "../components/Navbar";
 import HomeList from "../components/HomeList";
 import MobileNavbar from "../components/MobileNavbar";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Searchbar from "../components/Searchbar";
 import ResultSection from "../components/ResultSection";
 import FavoriteList from "../components/FavoriteList";
@@ -25,7 +25,7 @@ export default function Homepage() {
     const [searchQuery, setSearch] = useState('') //penampung word
     const [onFavorite, setOnFavorite] = useState(false)
     const [currPage, setCurrPage] = useState('Home')
-    
+
     const handleActive = (searchStatus) => {
         setActive(searchStatus)
     }

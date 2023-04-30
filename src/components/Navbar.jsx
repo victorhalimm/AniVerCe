@@ -1,12 +1,9 @@
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
     Link
   } from "react-router-dom";
 
 import Logo from '../assets/anipeak-logo.png';
-import React, { forwardRef, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {  faSearch } from '@fortawesome/free-solid-svg-icons'
 

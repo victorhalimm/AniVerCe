@@ -1,5 +1,4 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import CharacterCard from './CharacterCard';
 

@@ -4,10 +4,10 @@ import {  GET_ANIME_SLIDER } from "../lib/getAnimeSlider"
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { Autoplay, Pagination } from 'swiper';
+import { Autoplay, EffectFade, Pagination } from 'swiper';
 import 'swiper/swiper-bundle.css';
 import { Link } from "react-router-dom";
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef} from "react";
 import LoadingPage from "../pages/LoadingPage";
 
 
@@ -19,14 +19,6 @@ import LoadingPage from "../pages/LoadingPage";
 const AnimeSlider = React.forwardRef((props, ref) => {
 
     const {loading, error, data} = useQuery(GET_ANIME_SLIDER)
-    
-    const [scoreColor, setColor] = useState("")
-
-    function colorPicker(score) {
-        if (score >= 80) setColor("green")
-        else if (score >= 50) setColor("yellow")
-        else setColor("red")
-    }
 
     function animeUrl(id) {
         return '/anime/' + id
@@ -39,12 +31,16 @@ const AnimeSlider = React.forwardRef((props, ref) => {
         
         <div ref={ref} className={props.onSearchStatus || props.favoriteStatus ? "hidden" : ''}>
             <Swiper
-            modules={[Pagination, Autoplay]}
+            modules={[Pagination, Autoplay, EffectFade]}
             spaceBetween={0}
             slidesPerView={1}            
             pagination={{ type: 'bullets', clickable: true }}
             loop={true}
             autoplay={true}
+            effect={'fade'}
+            fadeEffect={{
+                crossFade: true
+            }}
             >
                 {data.Page.media.map((anime, keys) => {
                     return (
