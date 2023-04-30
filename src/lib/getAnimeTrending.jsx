@@ -5,7 +5,7 @@ export const GET_ANIME_TREND = gql`query getAnimeSlide {
       media(type:ANIME, sort:TRENDING_DESC) {
         id
         coverImage {
-          large
+          extraLarge
         }
         title {
           english
