@@ -37,7 +37,6 @@ export default function Homepage() {
     function handleScroll() {
         const height = window.pageYOffset;
         setScrollHeight(height)
-        console.log(scrollHeight)
     }
 
     const handleSearch = (query) => {

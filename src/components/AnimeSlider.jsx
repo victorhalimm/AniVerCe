@@ -38,9 +38,6 @@ const AnimeSlider = React.forwardRef((props, ref) => {
             loop={true}
             autoplay={true}
             effect={'fade'}
-            fadeEffect={{
-                crossFade: true
-            }}
             >
                 {data.Page.media.map((anime, keys) => {
                     return (
