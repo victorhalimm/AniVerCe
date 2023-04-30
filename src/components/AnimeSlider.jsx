@@ -37,7 +37,7 @@ const AnimeSlider = React.forwardRef((props, ref) => {
     return (
         // this is for desktop version
         
-        <div ref={ref} className={props.onSearchStatus ? "hidden" : ''}>
+        <div ref={ref} className={props.onSearchStatus || props.favoriteStatus ? "hidden" : ''}>
             <Swiper
             modules={[Pagination, Autoplay]}
             spaceBetween={0}

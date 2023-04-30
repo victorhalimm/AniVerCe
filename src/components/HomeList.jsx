@@ -18,7 +18,7 @@ const HomeList = (props) => {
     return (
 
         
-        <div className={props.onSearchStatus ? "hidden" : 'bg-black w-full -mt-1 relative z-40'}>
+        <div className={props.onSearchStatus || props.favoriteStatus ? "hidden" : 'bg-black w-full -mt-1 relative z-40'}>
             <div className="mx-10 md:mx-16 flex flex-col gap-5">
             <div className="w-full text-white font-semibold text-2xl py-2 md:py-5">Airing This Season</div>
                 <div className="justify-center flex flex-wrap gap-10 md:justify-normal pb-10">

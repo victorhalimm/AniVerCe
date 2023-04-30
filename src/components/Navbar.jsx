@@ -13,6 +13,7 @@ import {  faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const Navbar = React.forwardRef((props, ref) => {
     let [selected, setSelected] = useState('Home');
+    
     function handleSelect(selectedName)  {
         setSelected(selectedName);
     };
@@ -34,10 +35,17 @@ const Navbar = React.forwardRef((props, ref) => {
                             </Link>
                         </div>
                         <div className={selected === 'Home' ? " bg-slate-50 text-slate-950 px-3 py-1 ease-in duration-100 rounded-lg" : "px-3 py-1 ease-out rounded-lg"}>
-                            <Link to='/' onClick={() => handleSelect('Home')}>Home</Link>
+                            <Link to='/' onClick={() => {
+                                handleSelect('Home')
+                                props.setPage('Home')
+
+                        }}>Home</Link>
                         </div>
                         <div className={selected === 'Favorite' ? " bg-slate-50 text-slate-950 px-3 py-1 ease-in duration-100 rounded-lg" : "px-3 py-1 ease-out rounded-lg"}>
-                            <Link to='/' onClick={() => handleSelect('Favorite')}>Favorite</Link>
+                            <Link to='/' onClick={() => {
+                                handleSelect('Favorite')
+                                props.setPage('Favorite')
+                        }}>Favorite</Link>
                         </div>
                     </div>
                     <button className={props.searchDisabled ? 'hidden' : "text-white text-lg font-medium"} onClick={handleSearch}>

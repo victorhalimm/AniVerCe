@@ -5,6 +5,7 @@ import MobileNavbar from "../components/MobileNavbar";
 import { useCallback, useEffect, useRef, useState } from "react";
 import Searchbar from "../components/Searchbar";
 import ResultSection from "../components/ResultSection";
+import FavoriteList from "../components/FavoriteList";
 
 
 export default function Homepage() {
@@ -22,11 +23,17 @@ export default function Homepage() {
     const [searchActive, setActive] = useState(false)
     const [onSearch, setOnSearch] = useState(false) //ngasi tau uda mulai search ato lom
     const [searchQuery, setSearch] = useState('') //penampung word
+    const [onFavorite, setOnFavorite] = useState(false)
+    const [currPage, setCurrPage] = useState('Home')
     
     const handleActive = (searchStatus) => {
         setActive(searchStatus)
     }
     
+    const handlePageChange = (page) => {
+        setCurrPage(page)
+    }
+
     function handleScroll() {
         const height = window.pageYOffset;
         setScrollHeight(height)
@@ -37,6 +44,11 @@ export default function Homepage() {
         setSearch(query)
     }
 
+    useEffect(() => {
+        if (currPage === 'Home') setOnFavorite(false)
+        else if (currPage === 'Favorite') setOnFavorite(true)
+    }, [currPage])
+ 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => {
@@ -77,15 +89,18 @@ export default function Homepage() {
         });
     };
 
+    
+    
     return (
     
     <div className="overflow-x-hidden">
-        <Navbar ref={desktopNav} changeBg={navChange} searchChange={handleActive} hide={searchActive}/>
+        <Navbar setPage={handlePageChange} ref={desktopNav} changeBg={navChange} searchChange={handleActive} hide={searchActive}/>
         <Searchbar show={searchActive} onSearchStatus={onSearch} searchChange={handleActive} typeSearch={handleSearch} searchWord={searchQuery} ref={searchBar} barHeight={searchBarHeight}/>
         <MobileNavbar ref={mobileNav} searchChange={handleActive} searchStatus={searchActive}/>
-        <AnimeSlider ref={animeSlide} onSearchStatus={onSearch}/>
-        <HomeList mobileHeight={mobileNavHeight} onSearchStatus={onSearch}/>
+        <AnimeSlider favoriteStatus={onFavorite} ref={animeSlide} onSearchStatus={onSearch}/>
+        <HomeList favoriteStatus={onFavorite} mobileHeight={mobileNavHeight} onSearchStatus={onSearch}/>
         {onSearch && <ResultSection searchWord={searchQuery}/>}
+        {onFavorite && <FavoriteList />}
     </div>
     )
 }

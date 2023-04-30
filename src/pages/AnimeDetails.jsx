@@ -40,7 +40,7 @@ const AnimeDetails = () => {
             <Navbar searchDisabled={true}/>
             <AnimeBanner banner={data.Page.media[0].bannerImage}/>
             <MobileNavbar ref={mobileNav}/>
-            <DetailCard poster={data.Page.media[0].coverImage.large} title={data.Page.media[0].title.english} desc={data.Page.media[0].description} score={data.Page.media[0].averageScore} episode={data.Page.media[0].episodes} genres={data.Page.media[0].genres} season={data.Page.media[0].season} seasonYear={data.Page.media[0].seasonYear} format={data.Page.media[0].format}/>
+            <DetailCard anime={data.Page.media[0]}/>
             <div className="text-white text-2xl  font-semibold px-10 md:px-20">Characters List</div>
             <CharacterSlider characters={data.Page.media[0].characters.nodes}/>
             <SuggestionSlider genres={data.Page.media[0].genres} id={animeId}/>

@@ -16,7 +16,7 @@ const ResultSection = (props) => {
         
         <div className="w-screen py-10 bg-black min-h-screen">
             <div className="px-8 md:px-16 text-white text-xl md:text-2xl font-medium py-5">Search results for: {props.searchWord}</div>
-            <AnimeGrid animes={data.Page.media}/>
+            <AnimeGrid animation={true} animes={data.Page.media}/>
         </div>
     )
 }
