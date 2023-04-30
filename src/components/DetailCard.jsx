@@ -22,7 +22,7 @@ const DetailCard = (props) => {
         else if (score >= 50) setColor("yellow")
         else setColor("red")
     }
-    
+
     
     const removeFavorite = () => {
         const updatedData = favoriteList.filter(obj => obj.id !== props.anime.id);
@@ -59,7 +59,7 @@ const DetailCard = (props) => {
                 }
                 {
                     existFavorite &&
-                    <button onClick={() => removeFavorite(props.anime)}  className="hidden md:block bg-white w-full py-2 rounded-2xl text-xl text-black font-bold hover:bg-pink-600 hover:text-white duration-100">
+                    <button onClick={() => removeFavorite(props.anime)}  className="hidden md:block bg-pink-600 w-full py-2 rounded-2xl text-xl text-white font-bold hover:text-black hover:bg-white duration-100">
                         REMOVE FAVORITE
                     </button>
                 }
@@ -81,9 +81,18 @@ const DetailCard = (props) => {
                     Score: <span className={scoreColor === 'green' ? "text-green-500" : scoreColor === 'yellow' ?  "text-yellow-500" : "text-red-500"}>{props.anime.averageScore}</span>
                 </div>
                 <div className="text-md font-normal" dangerouslySetInnerHTML={{__html: props.anime.description}}></div>
-                <button className="md:hidden bg-white px-3 py-1 rounded-xl text-md text-black font-bold hover:bg-pink-600 hover:text-white duration-100">
+                {
+                    !existFavorite &&
+                    <button onClick={() => addFavorite(props.anime)} className="md:hidden bg-white px-3 py-1 rounded-xl text-md text-black font-bold hover:bg-pink-600 hover:text-white duration-100">
                     ADD FAVORITE
-                </button>
+                    </button>
+                }
+                {
+                    existFavorite &&
+                    <button onClick={() => removeFavorite(props.anime)}  className="md:hidden bg-pink-600 px-3 py-1 rounded-xl text-md text-white font-bold hover:bg-white hover:text-black duration-100">
+                        REMOVE FAVORITE
+                    </button>
+                }
             </div>
         </div>
     )
