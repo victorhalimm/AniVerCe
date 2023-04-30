@@ -45,7 +45,10 @@ export default function Homepage() {
 
     useEffect(() => {
         if (currPage === 'Home') setOnFavorite(false)
-        else if (currPage === 'Favorite') setOnFavorite(true)
+        else if (currPage === 'Favorite') {
+            setOnFavorite(true)
+            console.log("favorite is selected")
+        }
     }, [currPage])
  
     useEffect(() => {
@@ -95,7 +98,7 @@ export default function Homepage() {
     <div className="overflow-x-hidden">
         <Navbar setPage={handlePageChange} ref={desktopNav} changeBg={navChange} searchChange={handleActive} hide={searchActive}/>
         <Searchbar show={searchActive} onSearchStatus={onSearch} searchChange={handleActive} typeSearch={handleSearch} searchWord={searchQuery} ref={searchBar} barHeight={searchBarHeight}/>
-        <MobileNavbar ref={mobileNav} searchChange={handleActive} searchStatus={searchActive}/>
+        <MobileNavbar setPage={handlePageChange} ref={mobileNav} searchChange={handleActive} searchStatus={searchActive}/>
         <AnimeSlider favoriteStatus={onFavorite} ref={animeSlide} onSearchStatus={onSearch}/>
         <HomeList favoriteStatus={onFavorite} mobileHeight={mobileNavHeight} onSearchStatus={onSearch}/>
         {onSearch && <ResultSection searchWord={searchQuery}/>}
