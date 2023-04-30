@@ -23,7 +23,7 @@ const ListSlider = (props) => {
                 scrollbar={{ 
                     draggable: true,
                 }}
-                freeMode={true}
+                // freeMode={true}
                 breakpoints={{
                     0 : {
                         slidesPerView : 3
@@ -33,7 +33,7 @@ const ListSlider = (props) => {
                         
                     }
                 }}
-                className="py-5"
+                
                 >
                     {props.animes.map((anime, key) => {
                         return (
