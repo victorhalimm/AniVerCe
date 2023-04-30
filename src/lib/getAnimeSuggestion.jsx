@@ -5,7 +5,7 @@ export const GET_ANIME_SUGGESTION = gql`query getAnimeAiring($genres:[String], $
       media(type:ANIME, sort:POPULARITY_DESC, genre_in:$genres, id_not:$id) {
         id
         coverImage {
-          medium
+          large
         }
         title {
           english
