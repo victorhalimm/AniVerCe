@@ -16,7 +16,6 @@ const Searchbar = React.forwardRef((props, ref) => {
     }
     return (
         <>
-            {console.log(props.show)}
             <div ref={ref} className={props.show ? "fixed top-0 duration-300 bg-zinc-900 w-full items-center px-7 md:px-16 py-5 z-50 flex md:gap-3" : "hidden"}>
                 <input type="text" value={props.searchWord} onChange={handleSearch} placeholder="Search for anime" className="bg-transparent text-white outline-none text-xl w-full"/>
                 <button onClick={handleClose}>
