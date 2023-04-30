@@ -7,6 +7,7 @@ const MobileNavbar = React.forwardRef((props, ref) => {
     
     const handleSearch = () => {
         const status = !props.searchStatus
+        console.log(status)
         props.searchChange(status)
     }
     

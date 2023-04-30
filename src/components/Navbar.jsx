@@ -24,7 +24,7 @@ const Navbar = React.forwardRef((props, ref) => {
     return (
         <div className={props.hide ? 'hidden' : ''}>
             <nav ref={ref} className={props.changeBg ? "hidden md:block p-4 bg-black fixed w-full z-50 duration-200" : "hidden md:block p-4 bg-transparent fixed w-full z-50 duration-200"}>
-                {console.log(props.changeBg)}
+                
                 {/* desktop version */}
                 <div className="flex justify-between px-14 items-center w-full">
                     <div className="flex justify-around gap-8  text-slate-100 font-semibold text-lg items-center">
