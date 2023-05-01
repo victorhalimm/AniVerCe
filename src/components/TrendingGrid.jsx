@@ -26,7 +26,7 @@ const TrendingGrid = (props) => {
                 </Link>
                 <div className="flex flex-col gap-3">
                     <div className="flex-row flex gap-10 justify-between">
-                        <Link to={animeLink(props.anime[1].id)}>
+                        <Link to={animeLink(props.anime[2].id)}>
                             <div className="w-36 h-52 hover:scale-110 duration-150 bg-white relative">
                                 <div className="absolute bottom-0 text-white font-semibold text-sm z-20 px-3 pb-5">#3 {props.anime[2].title.english.length > 20 ? props.anime[2].title.english.slice(0, 20 ) + '...' : props.anime[2].title.english  }</div>
                                 <div className="absolute w-full h-full from-black bg-gradient-to-t"></div>
