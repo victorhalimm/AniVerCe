@@ -12,6 +12,7 @@ import LoadingPage from "./LoadingPage";
 import Searchbar from "../components/Searchbar";
 import ResultSection from "../components/ResultSection";
 import FavoriteList from "../components/FavoriteList";
+import FooterBar from "../components/FooterBar";
 
 const AnimeDetails = (props) => {
     const param = useParams()
@@ -109,6 +110,7 @@ const AnimeDetails = (props) => {
             }
             {onSearch && <ResultSection searchWord={searchQuery}/>}
             {onFavorite && <FavoriteList />}
+            <FooterBar />
             <div style={{height : mobileNavHeight}} className="w-full"></div>
         </div>
     )

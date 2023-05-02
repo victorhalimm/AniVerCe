@@ -37,7 +37,6 @@ const HomeList = (props) => {
                 <div className="justify-center flex flex-wrap gap-10 md:justify-normal pb-10">
                     <ListSlider animes={fanFavoriteData.Page.media}/>
                 </div>
-                <div style={{height: props.mobileHeight}} className="bg-black"></div>
             </div>
         </div>
     )

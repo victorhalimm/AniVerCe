@@ -37,7 +37,7 @@ const ListSlider = (props) => {
                 >
                     {props.animes.map((anime, key) => {
                         return (
-                            <SwiperSlide key={key} className="py-5">
+                            <SwiperSlide key={key} className="py-2 md:py-5">
                                 <button onMouseEnter={() => handleMouseEnter(key)} onMouseLeave={() => handleMouseLeave()} onTouchStart={() => handleMouseEnter(key)}>
                                     <div className="w-[6.5rem] h-44 md:w-44 md:h-60 relative hover:scale-110 duration-150">
                                         {(active === key) ? <ListHoverCard anime={anime}/> : ""}

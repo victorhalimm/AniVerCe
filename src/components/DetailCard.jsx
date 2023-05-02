@@ -75,12 +75,12 @@ const DetailCard = (props) => {
                         )
                     })}
                 </div>
-                <div className="text-md font-semibold">Total Episodes: {props.anime.episodes}</div>
-                <div className="text-md font-semibold">Season: {props.anime.season} {props.anime.seasonYear}</div>
-                <div className="text-md font-semibold">
+                <div className="font-semibold">Total Episodes: {props.anime.episodes}</div>
+                <div className="font-semibold">Season: {props.anime.season} {props.anime.seasonYear}</div>
+                <div className="font-semibold">
                     Score: <span className={scoreColor === 'green' ? "text-green-500" : scoreColor === 'yellow' ?  "text-yellow-500" : "text-red-500"}>{props.anime.averageScore}</span>
                 </div>
-                <div className="text-md font-normal" dangerouslySetInnerHTML={{__html: props.anime.description}}></div>
+                <div className="font-normal" dangerouslySetInnerHTML={{__html: props.anime.description}}></div>
                 {
                     !existFavorite &&
                     <button onClick={() => addFavorite(props.anime)} className="md:hidden bg-white px-3 py-1 rounded-xl text-md text-black font-bold hover:bg-pink-600 hover:text-white duration-100">

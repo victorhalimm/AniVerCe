@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import Searchbar from "../components/Searchbar";
 import ResultSection from "../components/ResultSection";
 import FavoriteList from "../components/FavoriteList";
+import FooterBar from "../components/FooterBar";
 
 
 export default function Homepage() {
@@ -95,7 +96,7 @@ export default function Homepage() {
     
     return (
     
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden bg-black">
         <Navbar setPage={handlePageChange} ref={desktopNav} changeBg={navChange} searchChange={handleActive} hide={searchActive}/>
         <Searchbar show={searchActive} onSearchStatus={onSearch} searchChange={handleActive} typeSearch={handleSearch} searchWord={searchQuery} ref={searchBar} barHeight={searchBarHeight}/>
         <MobileNavbar setPage={handlePageChange} ref={mobileNav} searchChange={handleActive} searchStatus={searchActive}/>
@@ -103,6 +104,8 @@ export default function Homepage() {
         <HomeList favoriteStatus={onFavorite} mobileHeight={mobileNavHeight} onSearchStatus={onSearch}/>
         {onSearch && <ResultSection searchWord={searchQuery}/>}
         {onFavorite && <FavoriteList />}
+        <FooterBar />
+        <div style={{height : mobileNavHeight}} className="w-full"></div>
     </div>
     )
 }

@@ -15,7 +15,6 @@ const Navbar = React.forwardRef((props, ref) => {
         setSelected(selectedName);
         props.setPage(selectedName)
     };
-    
 
     const handleSearch = () => {
         props.searchChange(true);
