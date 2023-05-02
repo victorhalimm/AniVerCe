@@ -9,7 +9,7 @@ const FooterBar = () => {
     return (
         <div className="bg-black px-10 md:px-16 flex flex-col gap-3 py-4 md:py-5">
             <div className="text-white opacity-50 text-sm md:text-base">
-                <div className="pb-2"><FontAwesomeIcon icon={faCopyright}/>  LC088 Victor Halim, All Rights Reserved</div>
+                <div className="pb-2"><FontAwesomeIcon icon={faCopyright}/> Aniverce by LC088 Victor Halim, All Rights Reserved</div>
                 <div className="pb-2">Anime list provided by Anilist</div>
             </div>
             <div className="flex gap-5">
