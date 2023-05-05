@@ -103,7 +103,7 @@ export default function Homepage() {
         <AnimeSlider favoriteStatus={onFavorite} ref={animeSlide} onSearchStatus={onSearch}/>
         <HomeList favoriteStatus={onFavorite} mobileHeight={mobileNavHeight} onSearchStatus={onSearch}/>
         {onSearch && <ResultSection searchWord={searchQuery}/>}
-        {onFavorite && <FavoriteList />}
+        {onFavorite && !onSearch && <FavoriteList />}
         <FooterBar />
         <div style={{height : mobileNavHeight}} className="w-full"></div>
     </div>
